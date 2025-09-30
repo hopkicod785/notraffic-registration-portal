@@ -43,7 +43,7 @@ const InstallationCard = ({ installation, onUpdateDate }: {
 
   return (
     <div
-      ref={drag}
+      ref={drag as any}
       className={`p-2 mb-1 rounded-lg text-xs cursor-move transition-all ${
         isDragging ? 'opacity-50' : 'opacity-100'
       } ${
@@ -80,7 +80,7 @@ const CalendarDay = ({ day, onDrop, onUpdateDate }: {
 
   return (
     <div
-      ref={drop}
+      ref={drop as any}
       className={`min-h-[120px] p-2 border border-gray-600 ${
         day.isCurrentMonth ? 'bg-gray-800' : 'bg-gray-900'
       } ${day.isToday ? 'ring-2 ring-blue-500' : ''} ${
