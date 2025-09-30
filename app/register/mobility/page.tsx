@@ -50,7 +50,8 @@ export default function MobilityRegistration() {
       }, 3000)
     } catch (error) {
       console.error('Error submitting form:', error)
-      alert(`Error submitting form: ${error.message || 'Unknown error'}. Check console for details.`)
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+      alert(`Error submitting form: ${errorMessage}. Check console for details.`)
     } finally {
       setIsSubmitting(false)
     }
